@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { RolesModule } from './roles/roles.module';
 import { UsersModule } from './users/users.module';
 import { SchoolsModule } from './schools/schools.module';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { SchoolsModule } from './schools/schools.module';
     RolesModule,
     UsersModule,
     SchoolsModule,
+    SharedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
