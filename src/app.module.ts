@@ -7,6 +7,7 @@ import { RolesModule } from './roles/roles.module';
 import { UsersModule } from './users/users.module';
 import { SchoolsModule } from './schools/schools.module';
 import { SharedModule } from './shared/shared.module';
+import { TenantModule } from './tenant/tenant.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { SharedModule } from './shared/shared.module';
     UsersModule,
     SchoolsModule,
     SharedModule,
+    TenantModule,
   ],
   controllers: [AppController],
   providers: [AppService],
