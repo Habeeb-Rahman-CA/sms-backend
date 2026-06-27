@@ -9,6 +9,7 @@ import { SchoolsModule } from './schools/schools.module';
 import { SharedModule } from './shared/shared.module';
 import { TenantModule } from './tenant/tenant.module';
 import { TenantMiddleware } from './tenant-resolver/tenant.middleware';
+import { AuthModule } from './authentication/auth.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { TenantMiddleware } from './tenant-resolver/tenant.middleware';
     SchoolsModule,
     SharedModule,
     TenantModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

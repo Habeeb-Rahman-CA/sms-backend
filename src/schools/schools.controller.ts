@@ -20,6 +20,7 @@ import {
 import { SchoolsService } from './schools.service';
 import { CreateSchoolDto } from './dto/create-school.dto';
 import { UpdateSchoolDto } from './dto/update-school.dto';
+import { CreateRegisterDto } from './dto/create-register.dto';
 
 @ApiTags('Schools')
 @Controller('schools')
@@ -33,6 +34,15 @@ export class SchoolsController {
   @ApiResponse({ status: 409, description: 'School code or email already exists.' })
   create(@Body() dto: CreateSchoolDto) {
     return this.schoolsService.create(dto);
+  }
+
+  @Post('register')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'Register a new school along with its primary administrator account' })
+  @ApiResponse({ status: 201, description: 'School and admin user successfully registered.' })
+  @ApiResponse({ status: 409, description: 'School code, school email, or admin email already exists.' })
+  register(@Body() dto: CreateRegisterDto) {
+    return this.schoolsService.register(dto);
   }
 
   @Get()
